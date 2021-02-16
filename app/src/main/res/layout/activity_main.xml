@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tareas.MainActivity">
+
+    <Button
+        android:id="@+id/btn_new_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/nueva_categoria"
+        android:onClick="nuevaCategoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_delete_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="borrarCategoria"
+        android:text="@string/borrar_categoira"
+        app:layout_constraintEnd_toEndOf="@+id/btn_new_category"
+        app:layout_constraintStart_toStartOf="@+id/btn_new_category"
+        app:layout_constraintTop_toBottomOf="@+id/btn_new_category" />
+
+    <Button
+        android:id="@+id/btn_shows_books"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="mostrarLibros"
+        android:text="@string/mostrar_libros"
+        app:layout_constraintEnd_toEndOf="@+id/btn_delete_category"
+        app:layout_constraintStart_toStartOf="@+id/btn_delete_category"
+        app:layout_constraintTop_toBottomOf="@+id/btn_delete_category" />
+</androidx.constraintlayout.widget.ConstraintLayout>

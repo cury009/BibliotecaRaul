@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BibliotecaRaul</string>
+    <string name="borrar_categoira">BORRAR CATEGOIRA</string>
+    <string name="mostrar_libros">MOSTRAR LIBROS</string>
+    <string name="nueva_categoria">NUEVA CATEGORIA</string>
+    <string name="nombre_categoria">Nombre Categoria</string>
+    <string name="insertar_categoria">INSERTAR CATEGORIA</string>
+    <string name="borrar_provincia">BORRAR PROVINCIA</string>
+    <string name="borrar_categoria">BORRAR CATEGORIA</string>
+    <string name="lista_libros">LISTA LIBROS</string>
+    <string name="detalles_libros">Detalles Libros</string>
+    <string name="nombre_libro">Nombre Libro</string>
+    <string name="todo">TODO</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="todo">TODO</string>
+    <string name="nombre_libro">Nombre Libro</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="categoria">categoria</string>
+</resources>
