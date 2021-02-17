@@ -1,4 +1,4 @@
-package com.example.bibliotecaraul.tareas;
+package com.example.bibliotecaraul.utilidades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.bibliotecaraul.R;
 
-public class MostrarLibrosActivity extends AppCompatActivity {
+public class DetallesLibrosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mostrar_libros);
+        setContentView(R.layout.activity_detalles_libros);
     }
 }

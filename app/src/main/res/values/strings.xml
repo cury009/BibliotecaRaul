@@ -11,9 +11,6 @@
     <string name="detalles_libros">Detalles Libros</string>
     <string name="nombre_libro">Nombre Libro</string>
     <string name="todo">TODO</string>
-    <string name="descripcion">Descripcion</string>
-    <string name="todo">TODO</string>
-    <string name="nombre_libro">Nombre Libro</string>
-    <string name="descripcion">Descripcion</string>
     <string name="categoria">categoria</string>
+    <string name="descripcion">descripcion</string>
 </resources>

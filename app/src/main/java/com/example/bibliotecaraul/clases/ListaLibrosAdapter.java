@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bibliotecaraul.R;
 
 import java.util.ArrayList;
 
-public class ListaLibrosAdapter extends ReyclerView.Adapter<LibroViewHolder> {
+public class ListaLibrosAdapter extends RecyclerView.Adapter<LibroViewHolder> {
     private Context c;
     private ArrayList<Libro> listaLibros;
     private LayoutInflater mInflater;
@@ -50,7 +51,7 @@ public class ListaLibrosAdapter extends ReyclerView.Adapter<LibroViewHolder> {
         Libro libroActual = listaLibros.get(position);
         holder.txt_rv_nombreL.setText("Libro: " + libroActual.getNombre());
         holder.txt_rv_Descripcion.setText(String.valueOf("Descripcion: " + libroActual.getDescripcion()));
-        holder.txt_rv_Categoria.setText(String.valueOf("Categoria: " + libroActual.getCategoria()));
+        holder.txt_rv_Categoria.setText(String.valueOf("Categoria: " + libroActual.getIdCategoria()));
     }
 
     @Override

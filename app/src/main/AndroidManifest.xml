@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BibliotecaRaul">
-        <activity android:name=".tareas.DetallesLibrosActivity"></activity>
-        <activity android:name=".tareas.MostrarLibrosActivity" />
-        <activity android:name=".tareas.BorrarCategoriaActivity" />
-        <activity android:name=".tareas.NuevaCategoriaActivity" />
-        <activity android:name=".tareas.MainActivity">
+        <activity android:name=".utilidades.DetallesLibrosActivity"></activity>
+        <activity android:name=".utilidades.MostrarLibrosActivity" />
+        <activity android:name=".utilidades.BorrarCategoriaActivity" />
+        <activity android:name=".utilidades.NuevaCategoriaActivity" />
+        <activity android:name=".utilidades.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
