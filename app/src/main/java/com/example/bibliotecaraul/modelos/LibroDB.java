@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.example.bibliotecaraul.clases.FotoLibro;
 import com.example.bibliotecaraul.clases.Libro;
+import com.example.bibliotecaraul.utilidades.ImagenesBlobBitmap;
 
 import java.sql.Blob;
 import java.sql.Connection;
@@ -53,7 +54,7 @@ public class LibroDB {
             String ordensql = "INSERT INTO libro (nombre, descripcion,idCategoria) VALUES (?, ?, ?);";
             PreparedStatement pst = conexion.prepareStatement(ordensql);
             pst.setString(1, l.getNombre());
-            pst.setInt(2, l.getDescripcion());
+            pst.setString(2, l.getDescripcion());
             pst.setInt(3, l.getIdCategoria());
             int filasAfectadas = pst.executeUpdate();
             pst.close();
@@ -103,7 +104,7 @@ public class LibroDB {
             String ordensql = "UPDATE libro SET nombre = ?, descripcion = ?, idCategoria = ? WHERE (idlibro = ?);";
             PreparedStatement pst = conexion.prepareStatement(ordensql);
             pst.setString(1, l.getNombre());
-            pst.setInt(2, l.getDescripcion());
+            pst.setString(2, l.getDescripcion());
             pst.setInt(3, l.getIdCategoria());
             pst.setInt(4, l.getIdLibro());
             int filasAfectadas = pst.executeUpdate();
@@ -136,18 +137,18 @@ public class LibroDB {
                 String nombreLibro = resultadosql.getString("nombre");
                 String descripcion = resultadosql.getString("descripcion");
                 int idCategoria = resultadosql.getInt("idCategoria");
-                LibroEncontrada = new Libro(idLibro, nombreLibro, descripcion, idCategoria);
+                libroEncontrada = new Libro(idLibro, nombreLibro, descripcion, idCategoria);
             }
             resultadosql.close();
             pst.close();
             conexion.close();
-            return LibroEncontrada;
+            return libroEncontrada;
         } catch (SQLException e) {
             return null;
         }
     }
 
-    public static ArrayList<FotoLibro> obtenerFotosFotoLibros(int width, int height) {
+    public static ArrayList<FotoLibro> obtenerFotosLibros(int width, int height) {
         Connection conexion = BaseDB.conectarConBaseDeDatos();
         if (conexion == null) {
             return null;

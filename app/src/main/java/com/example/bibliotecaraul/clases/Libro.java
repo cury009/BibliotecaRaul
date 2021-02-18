@@ -39,7 +39,7 @@ public class Libro implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 

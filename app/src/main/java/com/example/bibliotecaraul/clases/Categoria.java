@@ -1,8 +1,9 @@
 package com.example.bibliotecaraul.clases;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Categoria {
+public class Categoria implements Serializable {
     private int idCategoria;
     private String nombre;
 

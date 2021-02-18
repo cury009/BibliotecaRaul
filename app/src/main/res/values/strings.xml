@@ -13,4 +13,9 @@
     <string name="todo">TODO</string>
     <string name="categoria">categoria</string>
     <string name="descripcion">descripcion</string>
+    <string name="actualizar_categoria">Actualizar Categoria</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="id_categoria">Id Categoria</string>
+    <string name="idcategoria">idCategoria</string>
+    <string name="item_provincia">item provincia</string>
 </resources>

@@ -9,7 +9,7 @@ public class TareaMostrarLibros  implements Callable<Boolean> {
 
     private Categoria c = null;
 
-    public TareaMostrarLibros(Categoria c) {
+    public TareaMostrarLibros() {
         this.c = c;
     }
 
