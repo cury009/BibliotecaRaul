@@ -79,7 +79,7 @@ public class CategoriaDB {
         ArrayList<Categoria> categoriasDevueltas = new ArrayList<Categoria>();
         try {
             Statement sentencia = conexion.createStatement();
-            String ordenSQL = "select * from categorias";
+            String ordenSQL = "select * from categoria";
             ResultSet resultado = sentencia.executeQuery(ordenSQL);
             while(resultado.next())
             {
@@ -132,7 +132,7 @@ public class CategoriaDB {
         }
         //----------------------------
         try {
-            String ordensql = "UPDATE categorias SET nombre = ? WHERE idCategoria = ?";
+            String ordensql = "UPDATE categoria SET nombre = ? WHERE idCategoria = ?";
             PreparedStatement pst = conexion.prepareStatement(ordensql);
             pst.setString(1, p.getNombre());
             pst.setInt(2, p.getIdCategoria());

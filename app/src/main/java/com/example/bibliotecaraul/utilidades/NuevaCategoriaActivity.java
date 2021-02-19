@@ -55,11 +55,11 @@ public class NuevaCategoriaActivity extends AppCompatActivity {
     {
         if(insercionOK)
         {
-            Toast.makeText(this,"provincia guardada correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"categoria guardada correctamente", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            Toast.makeText(this,"No se pudo guardar la provincia", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"No se pudo guardar la categoria", Toast.LENGTH_SHORT).show();
         }
     }
 }
