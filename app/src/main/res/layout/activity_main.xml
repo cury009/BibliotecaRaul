@@ -26,7 +26,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:onClick="borrarCategoria"
-        android:text="@string/borrar_categoira"
+        android:text="@string/borrar_categoria"
         app:layout_constraintEnd_toEndOf="@+id/btn_new_category"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btn_new_category"
