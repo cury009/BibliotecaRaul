@@ -25,4 +25,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtListaLibros" />
+
+    <ImageView
+        android:id="@+id/img_reload"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="48dp"
+        android:contentDescription="@string/descripcion_reload"
+        android:onClick="refrescarLibros"
+        app:layout_constraintBottom_toBottomOf="@+id/img_plus"
+        app:layout_constraintEnd_toStartOf="@+id/img_plus"
+        app:layout_constraintTop_toBottomOf="@+id/rv_libros"
+        app:srcCompat="@drawable/reload" />
+
+    <ImageView
+        android:id="@+id/img_plus"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/descripcion_plus"
+        android:onClick="nuevosLibro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_libros"
+        app:srcCompat="@drawable/plus" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

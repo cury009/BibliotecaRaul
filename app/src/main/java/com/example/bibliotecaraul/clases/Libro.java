@@ -16,7 +16,7 @@ public class Libro implements Serializable {
         this.idCategoria = idCategoria;
     }
 
-    public Libro() {
+    public Libro(String nombre, String habitantes, int idCategoria) {
         this.idLibro = 0;
         this.nombre = "";
         this.descripcion = "";

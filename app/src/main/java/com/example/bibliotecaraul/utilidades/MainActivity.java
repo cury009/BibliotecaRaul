@@ -30,4 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MostrarLibrosActivity.class);
         startActivity(intent);
     }
+    public void actualizarCategoria(View view) {
+        Intent intent = new Intent(this, ActualizarCategoriaActivity1.class);
+        startActivity(intent);
+    }
 }

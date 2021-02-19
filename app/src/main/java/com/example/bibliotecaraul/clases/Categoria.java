@@ -12,7 +12,7 @@ public class Categoria implements Serializable {
         this.nombre = nombre;
     }
 
-    public Categoria() {
+    public Categoria(String nombrec) {
         this.idCategoria = 0;
         this.nombre = "";
     }

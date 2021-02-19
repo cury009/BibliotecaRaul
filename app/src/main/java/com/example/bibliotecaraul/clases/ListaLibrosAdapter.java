@@ -17,7 +17,7 @@ public class ListaLibrosAdapter extends RecyclerView.Adapter<LibroViewHolder> {
     private ArrayList<Libro> listaLibros;
     private LayoutInflater mInflater;
 
-    public ListaLibrosAdapter(Context c, ArrayList<Libro> listaLibros) {
+    public ListaLibrosAdapter(Context c, ArrayList<Libro> listaLibros, ArrayList<FotoLibro> fotosLibros) {
         this.c = c;
         this.listaLibros = listaLibros;
         mInflater = LayoutInflater.from(c);
@@ -43,7 +43,7 @@ public class ListaLibrosAdapter extends RecyclerView.Adapter<LibroViewHolder> {
     @NonNull
     @Override
     public LibroViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mItemView = mInflater.inflate(R.layout.item_rv_libros, parent, false);
+        View mItemView = mInflater.inflate(R.layout.item_recyclerview_libros, parent, false);
         return new LibroViewHolder(mItemView, this);
     }
     @Override

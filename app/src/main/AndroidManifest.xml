@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BibliotecaRaul">
-        <activity android:name=".utilidades.ActualizarCategoriaActivity2"></activity>
+        <activity android:name=".utilidades.NuevoLibroActivity"></activity>
+        <activity android:name=".utilidades.ActualizarCategoriaActivity2" />
         <activity android:name=".utilidades.ActualizarCategoriaActivity1" />
-        <activity android:name=".utilidades.DetallesLibrosActivity" />
+        <activity android:name=".utilidades.MostrarDetalleLibroActivity" />
         <activity android:name=".utilidades.MostrarLibrosActivity" />
         <activity android:name=".utilidades.BorrarCategoriaActivity" />
         <activity android:name=".utilidades.NuevaCategoriaActivity" />

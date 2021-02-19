@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
-public class FotoCiudadController {
+public class FotoLibrosController {
     public static ArrayList<FotoLibro> obtenerFotosLibros() {
 
         ArrayList<FotoLibro> fotosLibro = null;

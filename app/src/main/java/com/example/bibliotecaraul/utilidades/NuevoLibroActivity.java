@@ -4,37 +4,45 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bibliotecaraul.R;
 import com.example.bibliotecaraul.clases.Categoria;
+import com.example.bibliotecaraul.clases.Libro;
 import com.example.bibliotecaraul.controladores.CategoriaController;
+import com.example.bibliotecaraul.controladores.LibroController;
 
 import java.util.ArrayList;
 
-public class BorrarCategoriaActivity extends AppCompatActivity {
+public class NuevoLibroActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener   {
 
-    Spinner sp_borrarc = null;
+    public static final String EXTRA_OBJETO_LIBRO = "com.example.bibliotecaraul";
+    Spinner sp_nuevol_categoria = null;
     Categoria cseleccionada = null;
     ArrayAdapter<Categoria> adapter = null;
     ArrayList<Categoria> categorias = null;
-
+    EditText edt_nuevol_nombre = null;
+    EditText edt_nuevol_descripcion = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_borrar_categoria);
-        sp_borrarc = (Spinner) findViewById(R.id.sp_categoria);
-        if(sp_borrarc != null) {
-            sp_borrarc.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        setContentView(R.layout.activity_nuevo_libro);
+        edt_nuevol_nombre = findViewById(R.id.edt_nuevol_nombre);
+        edt_nuevol_descripcion = findViewById(R.id.edt_nuevol_descripcion);
+        sp_nuevol_categoria = (Spinner) findViewById(R.id.sp_nuevoL_categoria);
+        if(sp_nuevol_categoria != null) {
+            sp_nuevol_categoria.setOnItemSelectedListener(this);
             categorias = CategoriaController.obtenerCategorias();
             if(categorias != null) {
                 adapter = new ArrayAdapter<Categoria>(this, R.layout.item_categoria, categorias);
-                sp_borrarc.setAdapter(adapter);
+                sp_nuevol_categoria.setAdapter(adapter);
             }
         }
     }
@@ -43,10 +51,9 @@ public class BorrarCategoriaActivity extends AppCompatActivity {
     {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
     }
-    public void borrarCategoriaActivity(View view) {
-
+    public void insertarLibro(View view) {
         AlertDialog.Builder alerta1 = new AlertDialog.Builder(this);
-        alerta1.setTitle("borrar la categoria?");
+        alerta1.setTitle("quieres guardar el libro?");
         //alerta1.setMessage(" no -> cancelar, si-> guardar");
         alerta1.setPositiveButton("si", new DialogInterface.OnClickListener() {
             @Override
@@ -56,22 +63,28 @@ public class BorrarCategoriaActivity extends AppCompatActivity {
                     mostrarToast("selecciona una categoria");
                     return;
                 }
-                //borrar provincia
-                boolean borradoOK = CategoriaController.borrarCategoria(cseleccionada);
-                // recargar combo (o desde la base de datos volver a solicitar todo, o quitar solamente el item borrado)
-                if(borradoOK)
+                Libro l = null;
+                try{
+                    String nombre = String.valueOf(edt_nuevol_nombre.getText());
+                    String descripcion = String.valueOf(edt_nuevol_descripcion.getText());
+                    l = new Libro(nombre, descripcion, cseleccionada.getIdCategoria());
+
+                }catch (Exception e)
                 {
-                    mostrarToast("categoria borrada correctamente");
-                    // opcion 1, leemos todas las provincias de la base de datos otra vez
-                    adapter.clear();
-                    categorias = CategoriaController.obtenerCategorias();
-                    adapter.addAll(categorias);
-                    //  adapter.add(new Provincia("provincia3"));
-                    // opcion 2, borramos del adaptador la provincia borrada
-                    //  adapter.remove(pseleccionada);
+                    mostrarToast("error, revisa los datos introducidos");
+                }
+                //insertar Libro
+                boolean insertadoOK = LibroController.InsertarLibro(l);
+                if(insertadoOK)
+                {
+                    mostrarToast("libro insertada correctamente");
+                    Intent intent = new Intent();
+                    intent.putExtra(EXTRA_OBJETO_LIBRO, l);
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
                 else{
-                    mostrarToast("la categoria no se pudo borrar");
+                    mostrarToast("no se pudo crear el libro");
                 }
             }
         });
@@ -82,17 +95,14 @@ public class BorrarCategoriaActivity extends AppCompatActivity {
             }
         });
         alerta1.show();
-
-
     }
-
+    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Categoria c = (Categoria) sp_borrarc.getItemAtPosition(position);
+        Categoria c = (Categoria) sp_nuevol_categoria.getItemAtPosition(position);
         cseleccionada = c;
-        //  Toast.makeText(this, p.getNombre(), Toast.LENGTH_SHORT).show();
     }
 
-
+    @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
