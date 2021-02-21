@@ -17,7 +17,7 @@ import com.example.bibliotecaraul.controladores.CategoriaController;
 
 import java.util.ArrayList;
 
-public class BorrarCategoriaActivity extends AppCompatActivity {
+public class BorrarCategoriaActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
 
     Spinner sp_borrarc = null;
     Categoria cseleccionada = null;

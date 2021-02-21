@@ -16,11 +16,16 @@ public class Libro implements Serializable {
         this.idCategoria = idCategoria;
     }
 
-    public Libro(String nombre, String habitantes, int idCategoria) {
+    public Libro() {
         this.idLibro = 0;
         this.nombre = "";
         this.descripcion = "";
-        this.idCategoria = 0;
+        this.idCategoria = 1;
+    }
+    public Libro(String nombre, String descripcion, int idCategoria) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.idCategoria = idCategoria;
     }
 
     public int getIdLibro() {

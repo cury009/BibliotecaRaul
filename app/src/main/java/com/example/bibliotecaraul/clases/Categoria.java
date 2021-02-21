@@ -13,8 +13,7 @@ public class Categoria implements Serializable {
     }
 
     public Categoria(String nombrec) {
-        this.idCategoria = 0;
-        this.nombre = "";
+        this.nombre = nombrec;
     }
 
     public int getIdCategoria() {
@@ -48,10 +47,7 @@ public class Categoria implements Serializable {
 
     @Override
     public String toString() {
-        return "Categoria{" +
-                "idCategoria=" + idCategoria +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return nombre;
     }
 }
 

@@ -15,13 +15,16 @@ import java.util.ArrayList;
 public class ListaLibrosAdapter extends RecyclerView.Adapter<LibroViewHolder> {
     private Context c;
     private ArrayList<Libro> listaLibros;
+    private  ArrayList<FotoLibro> listaFotosLibros;
     private LayoutInflater mInflater;
 
     public ListaLibrosAdapter(Context c, ArrayList<Libro> listaLibros, ArrayList<FotoLibro> fotosLibros) {
         this.c = c;
         this.listaLibros = listaLibros;
+        this.listaFotosLibros = fotosLibros;
         mInflater = LayoutInflater.from(c);
     }
+
     public Context getC() { return c; }
 
     public void setC(Context c) {this.c = c; }
