@@ -31,7 +31,9 @@ public class LibroDB {
                 String nombre = resultado.getString("nombre");
                 String descripcion = resultado.getString("descripcion");
                 int idCategoria = resultado.getInt("idCategoria");
-                Libro l = new Libro(idLibro, nombre, descripcion, idCategoria);
+                Blob foto = resultado.getBlob("foto");
+                Bitmap fotobm = ImagenesBlobBitmap.blob_to_bitmap(foto,100,100);
+                Libro l = new Libro(idLibro, nombre, descripcion, idCategoria, fotobm);
                 librosDevueltas.add(l);
             }
             resultado.close();
@@ -153,7 +155,7 @@ public class LibroDB {
         if (conexion == null) {
             return null;
         }
-        ArrayList<FotoLibro> fotosCiudadesDevueltas = new ArrayList<FotoLibro>();
+        ArrayList<FotoLibro> fotosLibrosDevueltas = new ArrayList<FotoLibro>();
         try {
             Statement sentencia = conexion.createStatement();
             String ordenSQL = "select * from fotos_libros";
@@ -164,12 +166,12 @@ public class LibroDB {
                 Bitmap bm_foto = ImagenesBlobBitmap.blob_to_bitmap(foto, width, height);
                 int idlibro = resultado.getInt("idlibro");
                 FotoLibro fl = new FotoLibro(idfoto, bm_foto, idlibro);
-                fotosCiudadesDevueltas.add(fl);
+                fotosLibrosDevueltas.add(fl);
             }
             resultado.close();
             sentencia.close();
             conexion.close();
-            return fotosCiudadesDevueltas;
+            return fotosLibrosDevueltas;
         } catch (SQLException e) {
             Log.i("sql", "error sql");
             return null;

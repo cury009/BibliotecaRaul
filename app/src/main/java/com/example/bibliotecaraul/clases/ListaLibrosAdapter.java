@@ -1,6 +1,7 @@
 package com.example.bibliotecaraul.clases;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,11 @@ public class ListaLibrosAdapter extends RecyclerView.Adapter<LibroViewHolder> {
         holder.txt_rv_nombreL.setText("Libro: " + libroActual.getNombre());
         holder.txt_rv_Descripcion.setText(String.valueOf("Descripcion: " + libroActual.getDescripcion()));
         holder.txt_rv_Categoria.setText(String.valueOf("Categoria: " + libroActual.getIdCategoria()));
+        Bitmap fotobm = libroActual.getFoto();
+        if (fotobm != null) {
+            holder.img_libro.setImageBitmap(fotobm);
+        }
+
     }
 
     @Override

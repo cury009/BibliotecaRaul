@@ -1,6 +1,9 @@
 package com.example.bibliotecaraul.clases;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
+import java.sql.Blob;
 import java.util.Objects;
 
 public class Libro implements Serializable {
@@ -8,6 +11,7 @@ public class Libro implements Serializable {
     private String nombre;
     private String descripcion;
     private int idCategoria;
+    private Bitmap foto;
 
     public Libro(int idLibro, String nombre, String descripcion, int idCategoria ) {
         this.idLibro = idLibro;
@@ -15,12 +19,28 @@ public class Libro implements Serializable {
         this.descripcion = descripcion;
         this.idCategoria = idCategoria;
     }
+    public Libro(int idLibro, String nombre, String descripcion, int idCategoria, Bitmap foto ) {
+        this.idLibro = idLibro;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.idCategoria = idCategoria;
+        this.foto = foto;
+    }
+
+    public Bitmap getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Bitmap foto) {
+        this.foto = foto;
+    }
 
     public Libro() {
         this.idLibro = 0;
         this.nombre = "";
         this.descripcion = "";
         this.idCategoria = 1;
+        this.foto = null;
     }
     public Libro(String nombre, String descripcion, int idCategoria) {
         this.nombre = nombre;
